@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
         "airbnb-base"
@@ -18,6 +19,7 @@
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
         "quote-props": ["error", "as-needed"],
-        "no-new": 0
+        "no-new": 0,
+        "no-unused-expressions": 0
     }
 }

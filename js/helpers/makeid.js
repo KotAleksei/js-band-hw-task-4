@@ -23,8 +23,8 @@ function makeID() {
   }
 
   // after it - ID is unique
-  costList.forEach((el) => (el.id === result ? makeID() : null));
-  transportList.forEach((el) => (el.id === result ? makeID() : null));
+  costList ? costList.forEach((el) => (el.id === result ? makeID() : null)) : null;
+  transportList ? transportList.forEach((el) => (el.id === result ? makeID() : null)) : null;
 
   return result;
 }

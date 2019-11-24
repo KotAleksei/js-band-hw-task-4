@@ -13,14 +13,17 @@ export default class LocalStorage {
   }
 
   add(key, value) {
-    const listArr = this.getItem(key);
-    listArr.push(value);
-    localStorage.setItem(`${this.prefix}${key}`, JSON.stringify(listArr));
+    try {
+      const listArr = this.getItem(key);
+      listArr.push(value);
+      localStorage.setItem(`${this.prefix}${key}`, JSON.stringify(listArr));
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   setKeys(arr) {
     arr.forEach((key) => {
-      // eslint-disable-next-line
       this.getItem(key) ? null : localStorage.setItem(`${this.prefix}${key}`, JSON.stringify([]));
     });
   }

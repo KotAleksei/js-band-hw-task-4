@@ -8,7 +8,8 @@
     "build": "webpack --mode production ",
     "eslint": "npx eslint --ext js js/",
     "eslint-fix": "npx eslint --fix --ext js js/",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "test": "jest"
   },
   "author": "KotAleksei",
   "license": "ISC",
@@ -26,6 +27,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "path": "^0.12.7",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
@@ -36,5 +38,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "dependencies": {}
 }
