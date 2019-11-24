@@ -1,7 +1,7 @@
 import {
   TRANSPORT_LIST_STORAGE_KEY,
   COST_LIST_STORAGE_KEY,
-} from '../constants/common.constants.js';
+} from '../constants/common.constants';
 import LocaleStorage from '../services/localstorage';
 
 function makeID() {
@@ -13,8 +13,8 @@ function makeID() {
   const costList = store.getItem(COST_LIST_STORAGE_KEY);
 
   // generate random (not unique) ID
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 5; j++) {
+  for (let i = 0; i < 3; i += 1) {
+    for (let j = 0; j < 5; j += 1) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     if (i !== 2) {

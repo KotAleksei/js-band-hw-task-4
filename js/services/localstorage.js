@@ -20,6 +20,7 @@ export default class LocalStorage {
 
   setKeys(arr) {
     arr.forEach((key) => {
+      // eslint-disable-next-line
       this.getItem(key) ? null : localStorage.setItem(`${this.prefix}${key}`, JSON.stringify([]));
     });
   }

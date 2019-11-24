@@ -12,18 +12,17 @@ export default class TransportForm {
   constructor(name) {
     this.name = name;
     this.store = new LocalStorage();
-    this.render = new Render();
     this.inputEls = [
       'model', 'nameOfTransport', 'producedYear', 'capacity', 'averageSpeed', 'countOrGas',
     ];
     this.inputValues = this.inputEls.map((inputEl) => `${inputEl}Value`);
 
-    this.createForm(this.name);
+    TransportForm.createForm(this.name);
     this.takeElementsFromForm();
     this.setListenersForm();
   }
 
-  createForm(name) {
+  static createForm(name) {
     forms.insertAdjacentHTML('afterbegin', TransportFormTemplate(name));
   }
 
@@ -66,11 +65,11 @@ export default class TransportForm {
       ...this.inputValues.map((value) => this[value]),
     );
     this.store.add(TRANSPORT_LIST_STORAGE_KEY, newItem);
-    this.render.renderItem(newItem, 'Transport');
+    Render.renderItem(newItem, 'Transport');
     this.resetData();
   }
 
   resetData() {
-    this.inputEls.forEach((inputEl) => this[inputEl].value = '');
+    this.inputEls.forEach((inputEl) => { this[inputEl].value = ''; });
   }
 }
