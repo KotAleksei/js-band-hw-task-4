@@ -8,7 +8,8 @@ export default class Ship extends Transport {
     this.name = name;
     this.countOfTeam = countOfTeam;
   }
+
   showAverageSpeed() {
-    return this.averageSpeed + 'nm';
+    return `${this.averageSpeed}nm`;
   }
 }

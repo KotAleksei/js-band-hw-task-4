@@ -3,9 +3,9 @@ export default (item) => {
     id,
     model,
     costBykg,
-    costBykm
+    costBykm,
   } = item;
-  
+
   return `
     <li class="listItem show cost">
       <h3>Cost Of Delivery</h3>

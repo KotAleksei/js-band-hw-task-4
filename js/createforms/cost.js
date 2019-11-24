@@ -1,4 +1,4 @@
-import { 
+import {
   forms,
   COST_LIST_STORAGE_KEY,
 } from '../constants/common.constants';
@@ -15,9 +15,11 @@ export default class CostForm {
     this.takeElementsFromForm();
     this.setListenersForm();
   }
+
   createForm() {
     forms.insertAdjacentHTML('afterbegin', CostFormTemplate);
   }
+
   takeElementsFromForm() {
     this.createEl = document.querySelector('.create.costOfDelivery');
     this.modelOfTransport = document.querySelector('.modelOfTransport');
@@ -25,42 +27,47 @@ export default class CostForm {
     this.costBykm = document.querySelector('.costBykm');
     this.btnCancel = document.querySelector('.cancelAdd');
   }
+
   setListenersForm() {
     this.createEl.addEventListener('submit', this.handleSubmit.bind(this));
     this.modelOfTransport.addEventListener('click', this.setModelOfTransport.bind(this));
     this.costBykg.addEventListener('input', this.setCostBykg.bind(this));
-    this.costBykm.addEventListener('input', this.setCostBykm.bind(this))
+    this.costBykm.addEventListener('input', this.setCostBykm.bind(this));
     this.btnCancel.addEventListener('click', this.cancelAdd.bind(this));
   }
 
   setModelOfTransport(e) {
     this.modelOfTransportValue = e.target.value;
   }
+
   setCostBykg(e) {
     this.costBykgValue = e.target.value.trim();
-  } 
+  }
+
   setCostBykm(e) {
     this.costBykmValue = e.target.value.trim();
   }
-  cancelAdd () {
-    this.resetData;
+
+  cancelAdd() {
+    this.resetData();
   }
+
   handleSubmit(e) {
     e.preventDefault();
-    let newItem = new CostOfDelivery(
+    const newItem = new CostOfDelivery(
       this.modelOfTransportValue,
       this.costBykgValue,
-      this.costBykmValue
+      this.costBykmValue,
     );
 
     this.store.add(COST_LIST_STORAGE_KEY, newItem);
     this.render.renderItem(newItem);
     this.resetData();
   }
+
   resetData() {
-    this.modelOfTransport.value = ''
+    this.modelOfTransport.value = '';
     this.costBykg.value = '';
     this.costBykm.value = '';
   }
 }
-

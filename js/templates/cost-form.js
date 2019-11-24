@@ -23,4 +23,4 @@ const costForm = `
   </form>
 `;
 
-export default costForm ;
+export default costForm;

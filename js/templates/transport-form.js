@@ -1,5 +1,4 @@
-export default (name) => {
-  return `
+export default (name) => `
     <form class="create transport ${name}" >
       <span class="aWarning">*all fields are required</span>
       <h2>Create ${name}</h2>
@@ -33,4 +32,3 @@ export default (name) => {
       </div>
     </form>
   `;
-};

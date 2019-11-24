@@ -8,8 +8,8 @@ export default class Truck extends Transport {
     this.licensePlate = licensePlate;
     this.typeOfGas = typeOfGas;
   }
+
   showAverageSpeed() {
-    return this.averageSpeed + 'km';
+    return `${this.averageSpeed}km`;
   }
 }
-
