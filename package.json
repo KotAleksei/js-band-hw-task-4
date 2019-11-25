@@ -20,6 +20,12 @@
     "> 1%",
     "last 3 version"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
@@ -38,7 +44,6 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^2.4.1",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "path": "^0.12.7",

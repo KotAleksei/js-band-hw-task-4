@@ -7,7 +7,6 @@ import Truck from '../js/models/truck';
 
 describe('makeID', () => {
   it('generation results checked', () => {
-    expect(true).toEquel(false);
     expect(makeID().length).toBe(17);
     expect(typeof makeID() === 'string').toBe(true);
   });
