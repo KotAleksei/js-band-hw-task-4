@@ -1,9 +1,9 @@
-import makeID from '../helpers/makeid';
-import LocalStorage from '../services/localstorage';
+import makeID from '../js/helpers/makeid';
+import LocalStorage from '../js/services/localstorage';
 import {
   TRANSPORT_LIST_STORAGE_KEY,
-} from '../constants/common.constants';
-import Truck from '../models/truck';
+} from '../js/constants/common.constants';
+import Truck from '../js/models/truck';
 
 describe('makeID', () => {
   it('generation results checked', () => {
