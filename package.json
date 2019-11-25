@@ -2,6 +2,7 @@
   "name": "js-band-hw-task-4",
   "version": "1.0.0",
   "description": "Ciklum University: JS Band Internship. Homework task 4",
+  "homepage": "https://kotaleksei.github.io/js-band-hw-task-4/",
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open",
@@ -9,7 +10,9 @@
     "eslint": "npx eslint --ext js js/",
     "eslint-fix": "npx eslint --fix --ext js js/",
     "commit": "npx git-cz",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "KotAleksei",
   "license": "ISC",
@@ -51,5 +54,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }

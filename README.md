@@ -37,6 +37,10 @@ Run Jest tests
 
 This script should be use after ```git add```, it standardization commit 
 
+```npm run deploy```
+
+Deploying a project on gh-pages (should use after ```npm run build``` or ```npm run predeploy```)
+
 ## Project Structure
 ```
 ├── jest
